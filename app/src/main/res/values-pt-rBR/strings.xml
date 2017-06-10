@@ -1,0 +1,65 @@
+<resources>
+    <string name="app_name">Formula1</string>
+    <string name="hint_search">Localizar temporada pelo ano</string>
+
+    <string name="title_attention">Atenção</string>
+    <string name="body_download_driver_standing">Baixando a classificação dos pilotos.</string>
+    <string name="body_download_driver_detail">Baixando os detalhes do piloto.</string>
+    <string name="body_error_download_driver_standing">Falha ao baixar a classificação dos pilotos.</string>
+    <string name="body_error_download_driver_detail">Falha ao baixar os detalhes do piloto.</string>
+
+    <string name="action_settings">Configurações</string>
+
+    <string name="txt_label_profile">Ano perfil:</string>
+    <string name="txt_label_round">Rodada:</string>
+    <string name="txt_label_country">Nacionalidade</string>
+    <string name="txt_label_date_birth">Data de nascimento</string>
+    <string name="txt_label_country_birth">Nacionalidade e data de nascimento</string>
+    <string name="txt_label_constructor_information">Informações do construtor</string>
+    <string name="txt_label_constructor_name">Nome do time:</string>
+    <string name="txt_label_constructor_country">Nacionalidade:</string>
+    <string name="txt_label_grid_identification">Identificação na grade</string>
+    <string name="txt_label_season_statistics">Estatísticas da Temporada</string>
+    <string name="txt_label_code">Código</string>
+    <string name="txt_label_number">Número</string>
+    <string name="txt_label_position">Posição</string>
+    <string name="txt_label_wins">Vitórias</string>
+    <string name="txt_label_points">Pontos</string>
+
+    <string name="line_graph_title">Progresso (Largada e Corrida)</string>
+    <string name="line_graph_series_grid">Posição Largada</string>
+    <string name="line_graph_series_race">Resuldado Corrida</string>
+
+    <string name="column_1_graph_label">Rodad.</string>
+    <string name="column_2_graph_label">Grande Prêmio</string>
+    <string name="column_3_graph_label">Grid</string>
+    <string name="column_4_graph_label">Final</string>
+    <string name="column_5_graph_label">Estatus</string>
+
+    <string name="title_viewpage_list">Classificações</string>
+    <string name="title_viewpage_favorite">Favoritos</string>
+
+    <string name="nationality_american"  >Americana</string>
+    <string name="nationality_australian">Aaustraliana</string>
+    <string name="nationality_austrian">Austríaco</string>
+    <string name="nationality_belgian"   >Belga</string>
+    <string name="nationality_brazilian" >Brasileira</string>
+    <string name="nationality_british"   >Britânica</string>
+    <string name="nationality_danish"    >Dinamarquesa</string>
+    <string name="nationality_dutch"     >Holandesa</string>
+    <string name="nationality_finnish"   >Finlandesa</string>
+    <string name="nationality_french"    >Francesa</string>
+    <string name="nationality_german"    >Alemã</string>
+    <string name="nationality_japanese"  >Japonesa</string>
+    <string name="nationality_indian"    >Indiana</string>
+    <string name="nationality_indonesian">Indonésia</string>
+    <string name="nationality_italian"   >Italiana</string>
+    <string name="nationality_mexican"   >Mexicana</string>
+    <string name="nationality_polish"    >Polonesa</string>
+    <string name="nationality_russian"   >Russa</string>
+    <string name="nationality_spanish"   >Espanhola</string>
+    <string name="nationality_swedish"   >Sueca</string>
+    <string name="nationality_swiss"     >Suíça</string>
+    <string name="nationality_venezuelan">Venezuelana</string>
+
+</resources>

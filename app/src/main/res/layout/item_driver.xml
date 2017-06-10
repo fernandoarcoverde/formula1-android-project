@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="8dp">
+
+    <ImageView
+        android:layout_width="69dp"
+        android:layout_height="93dp"
+        android:scaleType="centerCrop"
+        app:srcCompat="@drawable/nodriver"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/item_driver_image" />
+
+    <TextView
+        android:text="0"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_toRightOf="@+id/item_driver_image"
+        android:layout_toEndOf="@+id/item_driver_image"
+        android:layout_marginLeft="6dp"
+        android:includeFontPadding="false"
+        android:id="@+id/item_driver_position" />
+
+    <ImageView
+        android:id="@+id/item_driver_flag"
+        app:srcCompat="@drawable/noflag"
+        android:scaleType="centerCrop"
+        android:layout_width="25dp"
+        android:layout_height="15dp"
+        android:layout_alignTop="@+id/item_driver_position"
+        android:layout_toEndOf="@+id/item_driver_position"
+        android:layout_toRightOf="@+id/item_driver_position"
+        android:layout_marginTop="4dp"
+        android:layout_marginLeft="4dp"/>
+
+    <ImageView
+        app:srcCompat="@drawable/nologo"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_height="32dp"
+        android:layout_width="54dp"
+        android:id="@+id/item_driver_logo_constructor" />
+
+    <TextView
+        android:id="@+id/item_driver_points"
+        android:text="000"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/item_driver_image"
+        android:layout_alignLeft="@+id/item_driver_first_name"
+        android:layout_alignStart="@+id/item_driver_first_name" />
+
+    <TextView
+        android:id="@+id/item_driver_first_name"
+        android:text="FirstName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/item_driver_points"
+        android:layout_alignLeft="@+id/item_driver_second_name"
+        android:layout_alignStart="@+id/item_driver_second_name" />
+
+    <TextView
+        android:id="@+id/item_driver_second_name"
+        android:text="SecondName"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/item_driver_first_name"
+        android:layout_alignLeft="@+id/item_driver_position"
+        android:layout_alignStart="@+id/item_driver_position" />
+
+    <RatingBar
+        android:id="@+id/ratingBarWins_2"
+        style="@style/FlagRatingBar"
+        android:isIndicator="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/item_driver_first_name"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_above="@+id/ratingBarWins_1" />
+
+    <RatingBar
+        android:id="@+id/ratingBarWins_1"
+        style="@style/FlagRatingBar"
+        android:isIndicator="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/item_driver_points"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+
+
+</RelativeLayout>

@@ -3,4 +3,15 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+    <color name="colorGraphLineGreen">#70e40b</color>
+    <color name="colorGraphLineBlue">#2608e8</color>
+    <color name="colorGraphBackgroundLegend">#8c817f8d</color>
+    <color name="colorBackgroundLayout">#817f8d</color>
+    <color name="colorBackgroundLayoutInnerLayer">#ffffff</color>
+    <color name="colorLabelColumn">#c0bec5</color>
+    <color name="colorDivBar">#dcdcdc</color>
+    <color name="colorLineGridSet">#cfd1ff</color>
+    <color name="colorLineGridUnset">#ffffff</color>
+    #dcdcdc
+
 </resources>
