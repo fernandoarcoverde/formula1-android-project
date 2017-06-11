@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:textAlignment="center"
+        android:id="@+id/item_grid_round"
+        android:background="@color/colorLineGridUnset"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight=".75"
+        android:layout_marginStart="1dp"
+        android:layout_marginLeft="1dp"
+        android:paddingStart="6dp"
+        android:paddingEnd="1dp"
+        android:paddingLeft="6dp"
+        android:paddingRight="1dp"
+        android:id="@+id/item_grid_race_name"
+        android:background="@color/colorLineGridUnset" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1.03"
+        android:textAlignment="center"
+        android:id="@+id/item_grid_qualifying"
+        android:background="@color/colorLineGridUnset" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1.03"
+        android:textAlignment="center"
+        android:id="@+id/item_grid_race"
+        android:background="@color/colorLineGridUnset" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight=".73"
+        android:textAlignment="center"
+        android:id="@+id/item_grid_status"
+        android:background="@color/colorLineGridUnset" />
+
+</LinearLayout>

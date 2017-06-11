@@ -1,4 +1,4 @@
-package com.unibratec.ads.formula1;
+package com.unibratec.ads.formula1.adapters;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
@@ -11,6 +11,8 @@ import android.widget.RatingBar;
 import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
+import com.unibratec.ads.formula1.GetImage;
+import com.unibratec.ads.formula1.R;
 import com.unibratec.ads.formula1.model.DriverPosition;
 
 import java.util.List;

@@ -1,5 +1,6 @@
 package com.unibratec.ads.formula1;
 
+import android.content.Intent;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -9,6 +10,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 
+import com.unibratec.ads.formula1.fragments.DetailDriverFragment;
 import com.unibratec.ads.formula1.fragments.FavoritesDriversFragment;
 import com.unibratec.ads.formula1.fragments.MainFragment;
 import com.unibratec.ads.formula1.model.DriverPosition;
@@ -69,7 +71,7 @@ public class MainActivity extends AppCompatActivity implements OnDriverPositionC
         bundle.putString("constructorCountry", driverPosition.getConstructors().
                 get(driverPosition.getConstructors().size() - 1).getNationality());
 
-/*        if (getResources().getBoolean(R.bool.phone)) {
+        if (getResources().getBoolean(R.bool.phone)) {
             Intent it = new Intent(this, DetailDriverActivity.class);
             it.putExtras(bundle);
             startActivity(it);
@@ -81,7 +83,7 @@ public class MainActivity extends AppCompatActivity implements OnDriverPositionC
                     .replace(R.id.content_driver_detail, detailDriverFragment, "detailDriver")
                     .commit();
         }
-*/
+
     }
 
 
@@ -123,9 +125,7 @@ public class MainActivity extends AppCompatActivity implements OnDriverPositionC
                 case 0:
                     return getResources().getString(R.string.title_viewpage_list);
                 default:
-                    return null;
-
-//                    return getResources().getString(R.string.title_viewpage_favorite);
+                    return getResources().getString(R.string.title_viewpage_favorite);
             }
         }
 

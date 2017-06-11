@@ -19,7 +19,7 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.unibratec.ads.formula1.CustomDialog;
-import com.unibratec.ads.formula1.DriverPositionAdapter;
+import com.unibratec.ads.formula1.adapters.DriverPositionAdapter;
 import com.unibratec.ads.formula1.OnDriverPositionClick;
 import com.unibratec.ads.formula1.R;
 import com.unibratec.ads.formula1.http.SeasonTaskLoader;
