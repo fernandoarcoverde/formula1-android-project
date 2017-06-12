@@ -19,6 +19,10 @@
     <string name="txt_label_constructor_name">Nome do time:</string>
     <string name="txt_label_constructor_country">Nacionalidade:</string>
     <string name="txt_label_grid_identification">Identificação na grade</string>
+    <string name="txt_label_circuit_information">Sobre o circuito</string>
+    <string name="txt_label_race_name">Corrida</string>
+    <string name="txt_label_circuit_name">Circuito</string>
+    <string name="txt_label_circuit_location">Localização</string>
     <string name="txt_label_season_statistics">Estatísticas da Temporada</string>
     <string name="txt_label_code">Código</string>
     <string name="txt_label_number">Número</string>

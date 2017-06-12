@@ -1,6 +1,7 @@
 package com.unibratec.ads.formula1.fragments;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.design.widget.CollapsingToolbarLayout;
@@ -23,6 +24,7 @@ import com.jjoe64.graphview.series.LineGraphSeries;
 import com.squareup.picasso.Picasso;
 import com.unibratec.ads.formula1.CustomDialog;
 import com.unibratec.ads.formula1.GetImage;
+import com.unibratec.ads.formula1.MapsActivity;
 import com.unibratec.ads.formula1.R;
 import com.unibratec.ads.formula1.Translate;
 import com.unibratec.ads.formula1.dao.DbEvent;
@@ -57,6 +59,7 @@ public class DetailDriverFragment extends Fragment implements LoaderManager.Load
     CollapsingToolbarLayout tBarLayout;
 
     ImageView imgDriver;
+    ImageView imgMaps;
     TextView txtSeasonYear;
     TextView  txtRound;
     TextView  txtDriverCountry;
@@ -68,6 +71,9 @@ public class DetailDriverFragment extends Fragment implements LoaderManager.Load
     TextView  txtPosition;
     TextView  txtWins;
     TextView  txtPoints;
+    TextView  txtRaceName;
+    TextView  txtCircuitName;
+    TextView  txtLocation;
     ImageView imgDriverFlag;
     ImageView imgConstructorFlag;
     ImageView imgConstructorLogo;
@@ -117,6 +123,7 @@ public class DetailDriverFragment extends Fragment implements LoaderManager.Load
 
 
         imgDriver           = (ImageView) view.findViewById(R.id.detail_image_driver);
+        imgMaps             = (ImageView) view.findViewById(R.id.detail_maps_loo);
         txtSeasonYear       = (TextView)  view.findViewById(R.id.detail_season);
         txtRound            = (TextView)  view.findViewById(R.id.detail_round);
         txtDriverCountry    = (TextView)  view.findViewById(R.id.detail_driver_country);
@@ -128,10 +135,34 @@ public class DetailDriverFragment extends Fragment implements LoaderManager.Load
         txtPosition         = (TextView)  view.findViewById(R.id.detail_position);
         txtWins             = (TextView)  view.findViewById(R.id.detail_wins);
         txtPoints           = (TextView)  view.findViewById(R.id.detail_points);
+        txtRaceName         = (TextView)  view.findViewById(R.id.detail_race_name);
+        txtCircuitName      = (TextView)  view.findViewById(R.id.detail_circuit_name);
+        txtLocation         = (TextView)  view.findViewById(R.id.detail_circuit_location);
         imgDriverFlag       = (ImageView) view.findViewById(R.id.detail_driver_flag);
         imgConstructorFlag  = (ImageView) view.findViewById(R.id.detail_constructor_flag);
         imgConstructorLogo  = (ImageView) view.findViewById(R.id.detail_constructor_logo);
         grpLineGraph        = (GraphView) view.findViewById(R.id.detail_line_graph);
+
+
+        imgMaps.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent it = new Intent(getActivity(), MapsActivity.class);
+                it.putExtra("LAT",Double.parseDouble(raceDriverRace.getRaceDriverRounds()
+                        .get(raceDriverRace.getRaceDriverRounds().size()-1).raceDriverCircuit
+                        .getRaceDriverLocation().getLatitude()));
+                it.putExtra("LONG", Double.parseDouble(raceDriverRace.getRaceDriverRounds()
+                        .get(raceDriverRace.getRaceDriverRounds().size()-1).raceDriverCircuit
+                        .getRaceDriverLocation().getLongitude()));
+                it.putExtra("CIRCUIT_NAME", raceDriverRace.getRaceDriverRounds()
+                        .get(raceDriverRace.getRaceDriverRounds().size()-1).raceDriverCircuit
+                        .getCircuitName());
+                it.putExtra("CIRCUIT_LOCALITY", raceDriverRace.getRaceDriverRounds()
+                        .get(raceDriverRace.getRaceDriverRounds().size()-1).raceDriverCircuit
+                        .getRaceDriverLocation().getLocality());
+                startActivity(it);
+            }
+        });
 
 
         favoritesDAO = FavoritesDAO.getInstance(getActivity().getApplication().getApplicationContext());
@@ -180,6 +211,7 @@ public class DetailDriverFragment extends Fragment implements LoaderManager.Load
             tBarLayout.setTitle(raceDriverRace.getDriver().getGivenName() +
                     " " + raceDriverRace.getDriver().getFamilyName());
         }
+        int mTotalRaces = raceDriverRace.getRaceDriverRounds().size();
         Picasso.with(getActivity()).load(raceDriverRace.getUrlImagePosterDriver()).into(imgDriver);
         txtSeasonYear     .setText(raceDriverRace.getSeasonYear());
         txtRound          .setText(raceDriverRace.getRound());
@@ -195,7 +227,9 @@ public class DetailDriverFragment extends Fragment implements LoaderManager.Load
         txtPosition       .setText(raceDriverRace.getPosition());
         txtWins           .setText(raceDriverRace.getWins());
         txtPoints         .setText(raceDriverRace.getPoints());
-
+        txtRaceName       .setText(raceDriverRace.getRaceDriverRounds().get(mTotalRaces-1).raceName);
+        txtCircuitName    .setText(raceDriverRace.getRaceDriverRounds().get(mTotalRaces-1).raceDriverCircuit.getCircuitName());
+        txtLocation       .setText(raceDriverRace.getRaceDriverRounds().get(mTotalRaces-1).raceDriverCircuit.getRaceDriverLocation().getLocality());
         changeFloatingButton(isFavotite);
 
         if (raceDriverRace.getRaceDriverRounds() != null) {

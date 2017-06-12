@@ -13,6 +13,8 @@ public class RaceDriverRound {
     /*  Structure GSON for Driver Details */
     public String round;
     public String raceName;
+    @SerializedName("Circuit")
+    public RaceDriverCircuit raceDriverCircuit;
     @SerializedName("Results")
     public List<RaceDriverDetail> raceDriverDetails;
 

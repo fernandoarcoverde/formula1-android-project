@@ -122,9 +122,11 @@ public class ResultParser {
                     result.raceDriverSeries.raceDriverRace
                             .getDriver().setPermanentNumber(bundle.getString("number"));
                     result.raceDriverSeries.raceDriverRace
-                            .getConstructors().get(0).setName(bundle.getString("constructorName"));
+                            .getConstructors().get(0)
+                            .setName(bundle.getString("constructorName"));
                     result.raceDriverSeries.raceDriverRace
-                            .getConstructors().get(0).setNationality(bundle.getString("constructorCountry"));
+                            .getConstructors().get(0)
+                            .setNationality(bundle.getString("constructorCountry"));
 
                     return result.raceDriverSeries;
                 }

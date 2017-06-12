@@ -20,6 +20,10 @@
     <string name="txt_label_constructor_name">Team name:</string>
     <string name="txt_label_constructor_country">Nationality:</string>
     <string name="txt_label_grid_identification">Grid identification</string>
+    <string name="txt_label_circuit_information">About circuit</string>
+    <string name="txt_label_race_name">Race name</string>
+    <string name="txt_label_circuit_name">Circuit name</string>
+    <string name="txt_label_circuit_location">Location</string>
     <string name="txt_label_season_statistics">Season Statistics</string>
     <string name="txt_label_code">Code</string>
     <string name="txt_label_number">Number</string>
@@ -62,6 +66,7 @@
     <string name="nationality_swedish">Swedish</string>
     <string name="nationality_swiss">Swiss</string>
     <string name="nationality_venezuelan">Venezuelan</string>
+    <string name="title_activity_maps">Map</string>
 
 
 </resources>
