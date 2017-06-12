@@ -12,8 +12,8 @@ import android.widget.ListView;
 import com.unibratec.ads.formula1.adapters.DriverPositionAdapter;
 import com.unibratec.ads.formula1.OnDriverPositionClick;
 import com.unibratec.ads.formula1.R;
-import com.unibratec.ads.formula1.dao.DataBaseEvent;
-import com.unibratec.ads.formula1.dao.DriverDAO;
+import com.unibratec.ads.formula1.dao.DbEvent;
+import com.unibratec.ads.formula1.dao.FavoritesDAO;
 import com.unibratec.ads.formula1.model.DriverPosition;
 
 import org.greenrobot.eventbus.EventBus;
@@ -30,7 +30,7 @@ public class FavoritesDriversFragment extends Fragment {
 
     private ListView mListDriverPositions;
     private List<DriverPosition> driverPositions;
-    private DriverDAO driverDAO;
+    private FavoritesDAO driverDAO;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -79,14 +79,14 @@ public class FavoritesDriversFragment extends Fragment {
 
 
     private  void updateList(){
-        driverDAO = new DriverDAO(getActivity());
+        driverDAO = new FavoritesDAO(getActivity());
         driverPositions = driverDAO.selectDriverPositions();
 
         mListDriverPositions.setAdapter(new DriverPositionAdapter(getActivity(), driverPositions));
     }
 
     @Subscribe(threadMode = ThreadMode.MAIN)
-    public void onMessageEvent(DataBaseEvent event) {
+    public void onMessageEvent(DbEvent event) {
         updateList();
     }
 }

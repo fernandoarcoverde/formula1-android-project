@@ -2,20 +2,21 @@
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:baselineAligned="false"
     tools:context="com.unibratec.ads.formula1.MainActivity">
 
-    !* Substituição da actionbar por appbar que terá a toolbar e as abas
+
     <android.support.design.widget.AppBarLayout
         android:id="@+id/apptoolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:theme="@style/AppTheme.AppBarOverlay">
 
-        !* toolbar com o nome do app e a ferramenta de busca
         <android.support.v7.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
@@ -25,24 +26,37 @@
 
         </android.support.v7.widget.Toolbar>
 
-        !*
         <android.support.design.widget.TabLayout
             android:id="@+id/tabs"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:tabMaxWidth="0dp"
             app:tabMode="fixed"
-            app:tabGravity="fill"/>
+            app:tabGravity="fill" />
 
     </android.support.design.widget.AppBarLayout>
 
-    !* implementação de ViewPage para troca de abas entre a lista de pilotos e dos favoritos
-    <android.support.v4.view.ViewPager
-        android:id="@+id/viewPage"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/apptoolbar" />
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/apptoolbar">
 
+        <android.support.v4.view.ViewPager
+            android:id="@+id/viewPage"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"/>
 
+        <FrameLayout
+            android:id="@+id/content_driver_detail"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"/>
+
+    </LinearLayout>
 
 </RelativeLayout>

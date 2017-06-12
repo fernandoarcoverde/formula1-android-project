@@ -14,7 +14,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.ListView;
 import android.widget.TextView;
 
 import com.jjoe64.graphview.GraphView;
@@ -26,9 +25,8 @@ import com.unibratec.ads.formula1.CustomDialog;
 import com.unibratec.ads.formula1.GetImage;
 import com.unibratec.ads.formula1.R;
 import com.unibratec.ads.formula1.Translate;
-import com.unibratec.ads.formula1.adapters.DriverRacesAdapter;
-import com.unibratec.ads.formula1.dao.DataBaseEvent;
-import com.unibratec.ads.formula1.dao.DriverDAO;
+import com.unibratec.ads.formula1.dao.DbEvent;
+import com.unibratec.ads.formula1.dao.FavoritesDAO;
 import com.unibratec.ads.formula1.http.RacesDriverTaskLoader;
 import com.unibratec.ads.formula1.model.RaceDriverRace;
 import com.unibratec.ads.formula1.model.RaceDriverSeries;
@@ -54,7 +52,7 @@ public class DetailDriverFragment extends Fragment implements LoaderManager.Load
     String mMessage_body_error;
     String mMessage_body_download;
     RaceDriverRace raceDriverRace;
-    DriverDAO driverDAO;
+    FavoritesDAO favoritesDAO;
     FloatingActionButton fab;
     CollapsingToolbarLayout tBarLayout;
 
@@ -74,7 +72,6 @@ public class DetailDriverFragment extends Fragment implements LoaderManager.Load
     ImageView imgConstructorFlag;
     ImageView imgConstructorLogo;
     GraphView grpLineGraph;
-    ListView listRaces;
 
 
     public DetailDriverFragment() {
@@ -135,14 +132,13 @@ public class DetailDriverFragment extends Fragment implements LoaderManager.Load
         imgConstructorFlag  = (ImageView) view.findViewById(R.id.detail_constructor_flag);
         imgConstructorLogo  = (ImageView) view.findViewById(R.id.detail_constructor_logo);
         grpLineGraph        = (GraphView) view.findViewById(R.id.detail_line_graph);
-      //  listRaces           = (ListView)  view.findViewById(R.id.detail_list_races);
 
 
-        driverDAO = DriverDAO.getInstance(getActivity().getApplication().getApplicationContext());
+        favoritesDAO = FavoritesDAO.getInstance(getActivity().getApplication().getApplicationContext());
         translate = Translate.getInstance(getActivity().getApplication().getApplicationContext());
         getImage  = GetImage.getInstance (getActivity().getApplication().getApplicationContext());
 
-        raceDriverRace = driverDAO.getDriverRace(getArguments().getString("driverId"));
+        raceDriverRace = favoritesDAO.getDriverRace(getArguments().getString("driverId"));
         if (raceDriverRace == null){
             getLoaderManager().initLoader(1, getArguments(), this);
 
@@ -248,7 +244,6 @@ public class DetailDriverFragment extends Fragment implements LoaderManager.Load
             grpLineGraph.getLegendRenderer().setBackgroundColor(getResources().getColor(R.color.colorGraphBackgroundLegend));
             grpLineGraph.addSeries(serieGridPosition);
             grpLineGraph.addSeries(serieFinalPosition);
-        //    listRaces.setAdapter(new DriverRacesAdapter(getActivity(), raceDriverRace.getRaceDriverRounds()));
         }
     }
 
@@ -258,16 +253,16 @@ public class DetailDriverFragment extends Fragment implements LoaderManager.Load
 
 
     public void saveOrRemoveFavorites(){
-        RaceDriverRace rDR = driverDAO.getDriverRace(raceDriverRace.getDriver().getDriverId());
+        RaceDriverRace rDR = favoritesDAO.getDriverRace(raceDriverRace.getDriver().getDriverId());
         if(rDR != null){
-            driverDAO.deleteDriverRace(raceDriverRace);
+            favoritesDAO.deleteDriverRace(raceDriverRace);
             changeFloatingButton(false);
 
         } else {
-            driverDAO.insertDriverRace(raceDriverRace);
+            favoritesDAO.insertDriverRace(raceDriverRace);
             changeFloatingButton(true);
         }
-        EventBus.getDefault().post(new DataBaseEvent());
+        EventBus.getDefault().post(new DbEvent());
     }
 
 
