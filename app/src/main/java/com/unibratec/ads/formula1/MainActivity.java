@@ -1,5 +1,11 @@
 package com.unibratec.ads.formula1;
 
+/*
+
+Projeto para fins didáticos do curso de Análise e Desenvolvimento de Sistemas
+
+ */
+
 import android.content.Intent;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
@@ -7,7 +13,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
-//import android.os.Bundle;
+import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 
 import com.unibratec.ads.formula1.fragments.DetailDriverFragment;
