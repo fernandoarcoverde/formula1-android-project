@@ -265,7 +265,7 @@ public class DetailDriverFragment extends Fragment implements LoaderManager.Load
             serieFinalPosition.setTitle(getResources().getString(R.string.line_graph_series_race));
             serieFinalPosition.setDrawDataPoints(true);
 
-/*            grpLineGraph.setTitle(getResources().getString(R.string.line_graph_title));
+            grpLineGraph.setTitle(getResources().getString(R.string.line_graph_title));
             grpLineGraph.getGridLabelRenderer().setGridColor(Color.GRAY);
             grpLineGraph.getGridLabelRenderer().setTextSize(GRID_LABEL_TEXT_SIZE);
             grpLineGraph.getGridLabelRenderer().setNumHorizontalLabels(minValueAxisX);
@@ -278,7 +278,8 @@ public class DetailDriverFragment extends Fragment implements LoaderManager.Load
             grpLineGraph.getLegendRenderer().setBackgroundColor(getResources().getColor(R.color.colorGraphBackgroundLegend));
             grpLineGraph.addSeries(serieGridPosition);
             grpLineGraph.addSeries(serieFinalPosition);
-  */      }
+            
+        }
     }
 
     @Override
