@@ -3,6 +3,7 @@ package com.unibratec.ads.formula1;
 /*
 
 Projeto para fins didáticos do curso de Análise e Desenvolvimento de Sistemas
+Faculdade UNIBRATEC - Recife - PE
 
  */
 
