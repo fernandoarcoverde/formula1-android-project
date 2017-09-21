@@ -278,6 +278,7 @@ public class DetailDriverFragment extends Fragment implements LoaderManager.Load
             grpLineGraph.getLegendRenderer().setBackgroundColor(getResources().getColor(R.color.colorGraphBackgroundLegend));
             grpLineGraph.addSeries(serieGridPosition);
             grpLineGraph.addSeries(serieFinalPosition);
+            
 
 //            grpLineGraph.setTitle(getResources().getString(R.string.line_graph_title));
 //            grpLineGraph.getGridLabelRenderer().setGridColor(Color.GRAY);
