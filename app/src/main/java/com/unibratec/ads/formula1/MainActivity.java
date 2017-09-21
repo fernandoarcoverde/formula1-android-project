@@ -1,12 +1,5 @@
 package com.unibratec.ads.formula1;
 
-/*
-
-Projeto para fins didáticos do curso de Análise e Desenvolvimento de Sistemas
-Faculdade UNIBRATEC - Recife - PE
-
- */
-
 import android.content.Intent;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
